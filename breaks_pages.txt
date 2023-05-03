@@ -1,0 +1,1 @@
+There are characters in CNAME file that can break pages, such as ��
