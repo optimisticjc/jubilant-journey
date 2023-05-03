@@ -5,4 +5,4 @@ A forked deleted repository cannot be restored by user.
 
 User has to write in to support to
 
-have us ensure that there are
+have us ensure that they are not private repository.
