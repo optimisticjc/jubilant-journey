@@ -1,1 +1,73 @@
-no worries
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number Patterns App</title>
+  </head>
+  <body>
+    <h1>Number Patterns App</h1>
+    
+    <textarea id="input" rows="10" cols="30" placeholder="Enter a list of numbers"></textarea>
+    <br>
+    
+    <button onclick="analyze()">Analyze</button>
+    
+    <h2>Analysis Results</h2>
+    <p id="min"></p>
+    <p id="max"></p>
+    <p id="average"></p>
+    <p id="increasing"></p>
+    <p id="decreasing"></p>
+  </body>
+  
+  <script>
+    function analyze() {
+      // Parse input as array of numbers
+      const input = document.getElementById("input").value;
+      const numbers = input.split(',').map(Number);
+      
+      // Calculate min, max, and average
+      const min = Math.min(...numbers);
+      const max = Math.max(...numbers);
+      const average = numbers.reduce((a, b) => a + b, 0) / numbers.length;
+      
+      // Check if the list is increasing or decreasing
+      const increasing = isIncreasing(numbers);
+      const decreasing = isDecreasing(numbers);
+      
+      // Display analysis results
+      document.getElementById("min").innerText = `Minimum value: ${min}`;
+      document.getElementById("max").innerText = `Maximum value: ${max}`;
+      document.getElementById("average").innerText = `Average value: ${average}`;
+      
+      if (increasing) {
+        document.getElementById("increasing").innerText = "The list is increasing";
+      } else {
+        document.getElementById("increasing").innerText = "The list is not increasing";
+      }
+      
+      if (decreasing) {
+        document.getElementById("decreasing").innerText = "The list is decreasing";
+      } else {
+        document.getElementById("decreasing").innerText = "The list is not decreasing";
+      }
+    }
+    
+    function isIncreasing(numbers) {
+      for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] <= numbers[i - 1]) {
+          return false;
+        }
+      }
+      return true;
+    }
+    
+    function isDecreasing(numbers) {
+      for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] >= numbers[i - 1]) {
+          return false;
+        }
+      }
+      return true;
+    }
+  </script>
+</html>
