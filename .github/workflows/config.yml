@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/optimisticjc/jubilant-journey/security/policy
+    about: I have a question about how to use POlicy.
+  - name: Discussions
+    url: https://github.com/optimisticjc/jubilant-journey/security/policy
+    about: Open Community discussions related to Quarkus. 
