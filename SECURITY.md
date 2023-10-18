@@ -1,1 +1,1 @@
-This is for your own good bruh.
+Please follow these security guidelance to prevent security risk. 
